@@ -14,8 +14,7 @@ var config = require('./config'),
   serveStatic = require('serve-static'),
   errorhandler = require('errorhandler'),
   RedisStore = require('connect-redis')(session),
-  http = require('http'),
-  path = require('path');
+  http = require('http');
 
 var app = express();
 
