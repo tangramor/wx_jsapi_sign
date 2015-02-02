@@ -1,5 +1,6 @@
 # wx_jsapi_sign
 The Nodejs server for manage Wechat (Wexin) access_token, jsapi ticket and signature generation. 用于管理微信JS API的access_token、ticket和根据参数生成签名
+
 使用了Redis作为数据存储，所以在运行环境中必须安装了redis服务器
 
 ## 使用方法
