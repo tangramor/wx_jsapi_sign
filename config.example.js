@@ -12,5 +12,5 @@ exports.weixin = {
   AppSecret: 'ad73709c6e0815c999999999999'
 };
 
-
+exports.debug = true;
 
