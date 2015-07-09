@@ -243,8 +243,9 @@ var sign = function (jsapi_ticket, url, nonce, timestamp) {
   };
   var string = raw(ret);
   var jsSHA = require('jssha');
-  var shaObj = new jsSHA(string, 'TEXT');
-  ret.signature = shaObj.getHash('SHA-1', 'HEX');
+  var shaObj = new jsSHA('SHA-1', 'TEXT');
+  shaObj.update(string);
+  ret.signature = shaObj.getHash("HEX"); 
 
   return ret;
 };
