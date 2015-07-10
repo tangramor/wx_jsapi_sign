@@ -4,33 +4,26 @@
   "description": "The Nodejs server for manage Wechat access_token, jsapi ticket and get signature",
   "author": "tangramor <tangramor@gmail.com>",
   "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
+  "scripts": {},
   "dependencies": {
+    "body-parser": "latest",
+    "compression": "latest",
+    "connect-redis": "latest",
+    "cookie-parser": "latest",
+    "errorhandler": "latest",
     "express": "latest",
     "express-session": "latest",
-    "multer": "latest",
-    "body-parser": "latest",
-    "morgan": "latest",
-    "compression": "latest",
     "method-override": "latest",
-    "cookie-parser": "latest",
-    "serve-favicon": "latest",
-    "serve-static": "latest",
-    "errorhandler": "latest",
+    "morgan": "latest",
+    "multer": "latest",
+    "redis": "^0.12.1",
     "request": "latest",
-
-    "redis": "latest",
-    "connect-redis": "latest"
+    "serve-favicon": "latest",
+    "serve-static": "latest"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "main": "index",
-  "scripts": {
-  },
   "engines": {
     "node": ">= 0.6"
   }
 }
-
