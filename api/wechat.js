@@ -28,7 +28,7 @@ exports.getWechatToken = function (req, res) {
     if(req.app.config.debug) console.log("API send token: ", token);
     res.send({access_token: token});
   });
-}
+};
 
 function getWechatToken(req, callback) {
 
@@ -107,7 +107,7 @@ exports.getWechatJsapiTicket = function (req, res) {
     if(req.app.config.debug) console.log("API send jsapi_ticket: ", ticket);
     res.send({jsapi_ticket: ticket});
   });
-}
+};
 
 function getWechatJsapiTicket (req, callback) {
   getWechatToken(req, function(err, token) {
@@ -191,6 +191,7 @@ function getWechatJsapiTicket (req, callback) {
  * @example {"signature": null}
  */
 exports.getWechatJsapiSign = function (req, res) {
+  console.log('hello');
   getWechatJsapiSign(req, function(err, signature) {
     if(req.app.config.debug) console.log("API send signature: ", signature);
     res.send({signature: signature});
