@@ -21,6 +21,19 @@ var STATE = {
 qiniu.conf.ACCESS_KEY = config.qiniu.ACCESS_KEY;
 qiniu.conf.SECRET_KEY = config.qiniu.SECRET_KEY;
 
+exports.stat = function(req, res) {
+  var key = req.query.key;
+  var client = new qiniu.rs.Client();
+
+  client.stat(config.qiniu.bucket, key, function(err, ret) {
+    if (!err) {
+      res.json(ret);
+    } else {
+      console.log(err);
+    }
+  });
+};
+
 exports.videoFormat = function(req, res) {
   var video_url = req.query.video_url;
   qiniu.fop.pfop(config.qiniu.bucket, video_url, 'avthumb/mp4', {}, _.partial(videoFormat, _, _, _, res));

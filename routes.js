@@ -8,6 +8,7 @@ exports = module.exports = function (app) {
   app.get('/api/wechat/getJsapiSign/', wechat.getWechatJsapiSign);
 
   app.get('/api/qiniu/videoFormat', qiniu.videoFormat);
+  app.get('/api/qiniu/stat', qiniu.stat);
 
   app.get('/*', function(req, res) {
     console.log("get request: ", req.query);
