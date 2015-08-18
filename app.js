@@ -29,13 +29,13 @@ app.server = http.createServer(app);
 app.sessionStore = new RedisStore({ host: 'localhost', port: 6379 });
 
 //redis cache
-var redis = require('redis'),
-	client = redis.createClient();
+var redis = require('redis'), client = redis.createClient();
+
 client.on('error',function(err){
-console.log('redis-err:'+err);
+  console.log('redis-err:'+err);
 });
 
-app.redis=client;
+app.redis = client;
 
 //settings
 app.disable('x-powered-by');
@@ -46,13 +46,11 @@ app.set('company-name', config.companyName);
 app.set('system-email', config.systemEmail);
 app.set('crypto-key', config.cryptoKey);
 
-
 //middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
 
 app.use(morgan('dev'));
 app.use(compression());
@@ -72,14 +70,11 @@ app.use(session({
 //route requests
 require('./routes')(app);
 
-
-
 //config express in dev environment
 var env = process.env.NODE_ENV || 'development';
 if ('development' == env) {
   app.use(errorhandler());
 }
-
 
 //listen up
 app.server.listen(app.get('port'), function () {

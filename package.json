@@ -5,32 +5,31 @@
   "author": "tangramor <tangramor@gmail.com>",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "production": "node app.js"
   },
   "dependencies": {
+    "body-parser": "latest",
+    "compression": "latest",
+    "connect-redis": "latest",
+    "cookie-parser": "latest",
+    "errorhandler": "latest",
     "express": "latest",
     "express-session": "latest",
-    "multer": "latest",
-    "body-parser": "latest",
-    "morgan": "latest",
-    "compression": "latest",
+    "jssha": "^2.0.1",
     "method-override": "latest",
-    "cookie-parser": "latest",
+    "morgan": "latest",
+    "multer": "latest",
+    "qiniu": "^6.1.8",
+    "redis": "^0.12.1",
+    "request": "latest",
     "serve-favicon": "latest",
     "serve-static": "latest",
-    "errorhandler": "latest",
-    "request": "latest",
-
-    "redis": "latest",
-    "connect-redis": "latest"
+    "underscore": "^1.8.3",
+    "urlencode": "^1.0.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "main": "index",
-  "scripts": {
-  },
   "engines": {
     "node": ">= 0.6"
   }
 }
-
