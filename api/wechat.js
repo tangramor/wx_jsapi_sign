@@ -1,12 +1,6 @@
 'use strict';
 
-///**
-// * 获取微信token
-// *
-// * GET
-// */
 var request = require('request');
-
 
 
 /**
@@ -28,7 +22,7 @@ exports.getWechatToken = function (req, res) {
     if(req.app.config.debug) console.log("API send token: ", token);
     res.send({access_token: token});
   });
-}
+};
 
 function getWechatToken(req, callback) {
 
@@ -107,7 +101,7 @@ exports.getWechatJsapiTicket = function (req, res) {
     if(req.app.config.debug) console.log("API send jsapi_ticket: ", ticket);
     res.send({jsapi_ticket: ticket});
   });
-}
+};
 
 function getWechatJsapiTicket (req, callback) {
   getWechatToken(req, function(err, token) {
@@ -169,8 +163,6 @@ function getWechatJsapiTicket (req, callback) {
       };
     }
   });
-
-
 }
 
 /**
@@ -195,12 +187,12 @@ exports.getWechatJsapiSign = function (req, res) {
     if(req.app.config.debug) console.log("API send signature: ", signature);
     res.send({signature: signature});
   });
-}
+};
 
 function getWechatJsapiSign (req, callback) {
   var noncestr = req.query.noncestr;
   var timestamp = req.query.timestamp;
-  var url = req.query.url.replace('%26', '&');
+  var url = decodeURI(req.query.url).replace(/%26/g, '&');
 
   getWechatJsapiTicket(req, function(err, ticket) {
     var t = sign(ticket, url, noncestr, timestamp);
@@ -212,7 +204,7 @@ function getWechatJsapiSign (req, callback) {
 
 var raw = function (args) {
   var keys = Object.keys(args);
-  keys = keys.sort()
+  keys = keys.sort();
   var newArgs = {};
   keys.forEach(function (key) {
     newArgs[key.toLowerCase()] = args[key];
@@ -243,8 +235,9 @@ var sign = function (jsapi_ticket, url, nonce, timestamp) {
   };
   var string = raw(ret);
   var jsSHA = require('jssha');
-  var shaObj = new jsSHA(string, 'TEXT');
-  ret.signature = shaObj.getHash('SHA-1', 'HEX');
+  var shaObj = new jsSHA('SHA-1', 'TEXT');  //new jsSHA(string, 'TEXT');
+  shaObj.update(string);
+  ret.signature = shaObj.getHash("HEX");  //shaObj.getHash('SHA-1', 'HEX');
 
   return ret;
 };

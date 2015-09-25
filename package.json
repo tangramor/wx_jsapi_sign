@@ -1,6 +1,6 @@
 {
   "name": "wx_jsapi_sign",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The Nodejs server for manage Wechat access_token, jsapi ticket and get signature",
   "author": "tangramor <tangramor@gmail.com>",
   "private": true,
@@ -8,23 +8,24 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "latest",
-    "express-session": "latest",
-    "multer": "latest",
-    "body-parser": "latest",
-    "morgan": "latest",
-    "compression": "latest",
-    "method-override": "latest",
-    "cookie-parser": "latest",
-    "serve-favicon": "latest",
-    "serve-static": "latest",
-    "errorhandler": "latest",
-    "request": "latest",
+    "express": "ˆ4.13.3",
+    "express-session": "ˆ1.11.3",
+    "multer": "ˆ1.0.5",
+    "body-parser": "ˆ1.14.0",
+    "morgan": "ˆ1.6.1",
+    "compression": "ˆ1.5.2",
+    "method-override": "ˆ2.3.5",
+    "cookie-parser": "ˆ1.4.0",
+    "errorhandler": "ˆ1.4.2",
+    "request": "ˆ2.63.0",
+    "jssha": "^2.0.1",
 
-    "redis": "latest",
-    "connect-redis": "latest"
+    "redis": "ˆ2.0.1",
+    "connect-redis": "ˆ2.5.1"
   },
   "devDependencies": {
+    "serve-favicon": "ˆ2.3.0",
+    "serve-static": "ˆ1.10.0"
   },
   "main": "index",
   "scripts": {
