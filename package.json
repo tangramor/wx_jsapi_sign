@@ -5,7 +5,8 @@
   "author": "tangramor <tangramor@gmail.com>",
   "private": true,
   "scripts": {
-    "production": "node app.js"
+    "production": "node app.js",
+    "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "latest",
