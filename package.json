@@ -8,24 +8,24 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "ˆ4.13.3",
-    "express-session": "ˆ1.11.3",
-    "multer": "ˆ1.0.5",
-    "body-parser": "ˆ1.14.0",
-    "morgan": "ˆ1.6.1",
-    "compression": "ˆ1.5.2",
-    "method-override": "ˆ2.3.5",
-    "cookie-parser": "ˆ1.4.0",
-    "errorhandler": "ˆ1.4.2",
-    "request": "ˆ2.63.0",
+    "express": "^4.13.3",
+    "express-session": "^1.11.3",
+    "multer": "^1.0.5",
+    "body-parser": "^1.14.0",
+    "morgan": "^1.6.1",
+    "compression": "^1.5.2",
+    "method-override": "^2.3.5",
+    "cookie-parser": "^1.4.0",
+    "errorhandler": "^1.4.2",
+    "request": "^2.63.0",
     "jssha": "^2.0.1",
 
-    "redis": "ˆ2.0.1",
-    "connect-redis": "ˆ2.5.1"
+    "redis": "^2.0.1",
+    "connect-redis": "^2.5.1"
   },
   "devDependencies": {
-    "serve-favicon": "ˆ2.3.0",
-    "serve-static": "ˆ1.10.0"
+    "serve-favicon": "^2.3.0",
+    "serve-static": "^1.10.0"
   },
   "main": "index",
   "scripts": {
