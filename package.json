@@ -1,6 +1,6 @@
 {
   "name": "wx_jsapi_sign",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The Nodejs server for manage Wechat access_token, jsapi ticket and get signature",
   "author": "tangramor <tangramor@gmail.com>",
   "private": true,
