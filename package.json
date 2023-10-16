@@ -19,7 +19,6 @@
     "errorhandler": "^1.4.2",
     "request": "^2.63.0",
     "jssha": "^2.0.1",
-
     "redis": "^2.0.1",
     "connect-redis": "^2.5.1"
   },
@@ -28,8 +27,6 @@
     "serve-static": "^1.10.0"
   },
   "main": "index",
-  "scripts": {
-  },
   "engines": {
     "node": ">= 0.6"
   }
