@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  wx_jsapi_sign:
+    container_name: wx_jsapi_sign
+    image: dingjunyao/wx_jsapi_sign:latest
+    ports:
+      - PORT:3000
+    environment:
+      - COMPANY_NAME="Beijing Dream Castle Culture Co., Ltd"
+      - PROJECT_NAME=梦之城微信控制中心
+      - SYSTEM_EMAIL=xxx@a-li.com.cn
+      - CRYPTO_KEY=k4yb0ardc4x
+      - LOCAL_SOURCE=dreamcastle
+      - APP_ID=wx9999999999
+      - APP_SECRET=ad73709c6e0815c999999999999
+      - WHITELIST=https://4ading.com,http://localhost:4000  # 留空允许全部
+    restart: unless-stopped

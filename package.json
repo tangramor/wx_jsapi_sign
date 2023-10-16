@@ -8,19 +8,20 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "body-parser": "^1.14.0",
+    "compression": "^1.5.2",
+    "connect-redis": "^2.5.1",
+    "cookie-parser": "^1.4.0",
+    "cors": "^2.8.5",
+    "errorhandler": "^1.4.2",
     "express": "^4.13.3",
     "express-session": "^1.11.3",
-    "multer": "^1.0.5",
-    "body-parser": "^1.14.0",
-    "morgan": "^1.6.1",
-    "compression": "^1.5.2",
-    "method-override": "^2.3.5",
-    "cookie-parser": "^1.4.0",
-    "errorhandler": "^1.4.2",
-    "request": "^2.63.0",
     "jssha": "^2.0.1",
+    "method-override": "^2.3.5",
+    "morgan": "^1.6.1",
+    "multer": "^1.0.5",
     "redis": "^2.0.1",
-    "connect-redis": "^2.5.1"
+    "request": "^2.63.0"
   },
   "devDependencies": {
     "serve-favicon": "^2.3.0",
@@ -31,4 +32,3 @@
     "node": ">= 0.6"
   }
 }
-
