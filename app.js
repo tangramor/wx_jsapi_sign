@@ -5,13 +5,13 @@ var config = require('./config'),
   express = require('express'),
   session = require('express-session'),
   bodyParser = require('body-parser'),
-  multer  = require('multer'),
+  multer = require('multer'),
   morgan = require('morgan'),
   compression = require('compression'),
   methodOverride = require('method-override'),
   cookieParser = require('cookie-parser'),
-  favicon = require('serve-favicon'),
-  serveStatic = require('serve-static'),
+  // favicon = require('serve-favicon'),
+  // serveStatic = require('serve-static'),
   errorhandler = require('errorhandler'),
   RedisStore = require('connect-redis')(session),
   http = require('http');
@@ -30,12 +30,12 @@ app.sessionStore = new RedisStore({ host: 'localhost', port: 6379 });
 
 //redis cache
 var redis = require('redis'),
-	client = redis.createClient();
-client.on('error',function(err){
-console.log('redis-err:'+err);
+  client = redis.createClient();
+client.on('error', function (err) {
+  console.log('redis-err:' + err);
 });
 
-app.redis=client;
+app.redis = client;
 
 //settings
 app.disable('x-powered-by');
@@ -68,6 +68,23 @@ app.use(session({
   resave: true
 }));
 
+const cors = require('cors')
+//  
+if (config.whitelist.join(',') === '') {
+  app.use(cors());
+} else {
+  var corsOptions = {
+    origin: function (origin, callback) {
+      console.log(config.whitelist);
+      if (config.whitelist.indexOf(origin) !== -1) {
+        callback(null, true)
+      } else {
+        callback(new Error('Not allowed by CORS: ' + origin + 'not in' + config.whitelist))
+      }
+    }
+  };
+  app.use(cors(corsOptions));
+}
 
 //route requests
 require('./routes')(app);

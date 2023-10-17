@@ -11,6 +11,7 @@ exports.weixin = {
   AppId: 'wx9999999999',
   AppSecret: 'ad73709c6e0815c999999999999'
 };
+exports.whitelist = 'https://example.com,http://example2.com:2000'
 
 exports.debug = true;
 
